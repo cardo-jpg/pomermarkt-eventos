@@ -1,241 +1,192 @@
 <title>Referências de Confraternização</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-  /* Layout: cada referência é um cartão grande estilo slide — imagem cheia de um lado, conteúdo do outro. Fundo claro e quente. */
+  /* Layout: galeria/mural — imagens grandes num grid masonry, fundo claro, pop coral. A imagem é a estrela. */
   :root{
-    --bg:#F4F0E8; --card:#ffffff; --ink:#221b14; --muted:#6f6454; --faint:#a89c8a;
-    --line:#e7ded1; --imgbg:#ede5d8;
-    --accent:#b4452f; --accent-ink:#9a3522; --accent-tint:#fbeee6;
-    --gold:#c3912f;
-    --shadow:0 2px 4px rgba(34,27,20,.05), 0 26px 60px rgba(34,27,20,.12);
-    --disp:"Bricolage Grotesque",system-ui,sans-serif;
-    --serif:"Fraunces",Georgia,serif;
-    --body:"Inter",system-ui,sans-serif;
+    --bg:#faf8f5; --card:#ffffff; --ink:#15130f; --muted:#716b61; --faint:#a79e90;
+    --pop:#ff5a36; --pop-ink:#d63e1e; --pop-tint:#fff1ec; --line:#ece9e3;
+    --shadow:0 10px 30px rgba(21,19,15,.09);
+    --disp:"Space Grotesk",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif;
+    color-scheme:light;
   }
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-    --bg:#16130e; --card:#201c15; --ink:#f3ece0; --muted:#a89d8c; --faint:#6b6050;
-    --line:#332c22; --imgbg:#0f0c08;
-    --accent:#e07550; --accent-ink:#e8886a; --accent-tint:#2a1a12;
-    --gold:#d6b45f;
-    --shadow:0 2px 4px rgba(0,0,0,.4), 0 26px 60px rgba(0,0,0,.5);
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#141210; --card:#1d1a15; --ink:#f1ece3; --muted:#a79d8e; --faint:#6f6554;
+    --pop:#ff6a48; --pop-ink:#ff8468; --pop-tint:#2a1711; --line:#2d2820;
+    --shadow:0 12px 34px rgba(0,0,0,.45);
     color-scheme:dark;
   }}
   :root[data-theme="dark"]{
-    --bg:#16130e; --card:#201c15; --ink:#f3ece0; --muted:#a89d8c; --faint:#6b6050;
-    --line:#332c22; --imgbg:#0f0c08;
-    --accent:#e07550; --accent-ink:#e8886a; --accent-tint:#2a1a12;
-    --gold:#d6b45f;
-    --shadow:0 2px 4px rgba(0,0,0,.4), 0 26px 60px rgba(0,0,0,.5);
+    --bg:#141210; --card:#1d1a15; --ink:#f1ece3; --muted:#a79d8e; --faint:#6f6554;
+    --pop:#ff6a48; --pop-ink:#ff8468; --pop-tint:#2a1711; --line:#2d2820;
+    --shadow:0 12px 34px rgba(0,0,0,.45);
     color-scheme:dark;
   }
-  *{box-sizing:border-box}
-  body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1000px;margin:0 auto;
-    padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-  h1,h2,h3{font-family:var(--disp);font-weight:700;line-height:1.08;text-wrap:balance;margin:0}
-  p{margin:0}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;
+    padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
 
-  /* MASTHEAD claro */
-  .hero{padding-top:calc(env(safe-area-inset-top,0px) + 3.4rem);padding-bottom:1.4rem}
-  .eyebrow{font-family:var(--disp);font-size:.76rem;font-weight:700;letter-spacing:.18em;
-    text-transform:uppercase;color:var(--accent-ink);display:flex;align-items:center;gap:.7rem}
-  .eyebrow::after{content:"";height:2px;width:46px;background:var(--accent);border-radius:2px}
-  .hero h1{font-size:clamp(2.3rem,6.6vw,3.7rem);font-weight:800;letter-spacing:-.02em;margin:1rem 0 .9rem;max-width:15ch}
-  .hero .lede{font-family:var(--serif);font-size:clamp(1.15rem,2.6vw,1.4rem);line-height:1.46;
-    color:var(--muted);max-width:46ch;font-weight:500}
-  .meta{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.3rem}
-  .meta span{font-size:.78rem;color:var(--muted);background:var(--card);border:1px solid var(--line);
-    border-radius:999px;padding:.4rem .85rem;box-shadow:0 1px 2px rgba(34,27,20,.04)}
-  .meta b{color:var(--accent-ink);font-family:var(--disp)}
+  /* HERO */
+  header{padding-top:calc(env(safe-area-inset-top,0px) + 3.2rem);padding-bottom:1.6rem;
+    display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;flex-wrap:wrap}
+  header h1{font-family:var(--disp);font-weight:700;font-size:clamp(2.2rem,5.6vw,3.5rem);
+    letter-spacing:-.03em;line-height:.98;max-width:13ch}
+  header h1 em{font-style:normal;color:var(--pop)}
+  header .r{text-align:right;font-size:.84rem;color:var(--muted);line-height:1.5}
+  header .r b{display:block;font-family:var(--disp);font-size:2.4rem;color:var(--ink);letter-spacing:-.02em;font-weight:700}
+  @media(max-width:560px){header .r{text-align:left}}
 
-  /* PADRÕES */
-  .pad{padding-block:2.4rem}
-  .pad .kick{font-family:var(--disp);font-size:.76rem;font-weight:700;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--faint);margin-bottom:.5rem}
-  .pad h2{font-size:clamp(1.4rem,3.6vw,1.95rem);margin-bottom:1.3rem}
-  .pats{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem}
-  @media(max-width:680px){.pats{grid-template-columns:1fr}}
-  .pat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.2rem 1.25rem;box-shadow:0 1px 2px rgba(34,27,20,.04)}
-  .pat .n{display:inline-flex;align-items:center;justify-content:center;width:1.9rem;height:1.9rem;
-    border-radius:8px;background:var(--accent-tint);color:var(--accent-ink);
-    font-family:var(--disp);font-weight:800;font-size:.95rem}
-  .pat h3{font-size:1.04rem;margin:.6rem 0 .35rem}
-  .pat p{font-size:.9rem;color:var(--muted)}
+  /* PADRÕES — faixa enxuta */
+  .padroes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;
+    padding:1.5rem 0 2rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:2rem}
+  @media(max-width:640px){.padroes{grid-template-columns:1fr;gap:1rem}}
+  .pz .n{font-family:var(--disp);font-weight:700;font-size:.78rem;color:var(--pop);letter-spacing:.06em}
+  .pz h3{font-family:var(--disp);font-weight:600;font-size:1.02rem;margin:.3rem 0 .25rem}
+  .pz p{font-size:.88rem;color:var(--muted)}
+  .lead{margin:0 0 1.4rem;color:var(--muted);max-width:60ch}
+  .lead b{color:var(--ink);font-weight:600}
 
-  /* ACERVO / CARTÕES GRANDES */
-  .cat{padding-block:1.4rem 3.4rem}
-  .cat .kick{font-family:var(--disp);font-size:.76rem;font-weight:700;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--faint);margin-bottom:.5rem}
-  .cat h2{font-size:clamp(1.4rem,3.6vw,1.95rem);margin-bottom:.4rem}
-  .cat .sub{color:var(--muted);max-width:60ch;margin-bottom:1.8rem}
+  /* GALERIA MASONRY */
+  .grid{columns:3;column-gap:18px;padding-bottom:1rem}
+  @media(max-width:860px){.grid{columns:2}}
+  @media(max-width:520px){.grid{columns:1}}
+  .tile{break-inside:avoid;margin-bottom:18px;border-radius:16px;overflow:hidden;background:var(--card);
+    box-shadow:var(--shadow);border:1px solid var(--line)}
+  .tile .im{position:relative;display:block}
+  .tile img{width:100%;display:block}
+  .tile .days{position:absolute;top:.6rem;left:.6rem;background:rgba(18,14,10,.72);color:#fff;
+    font-size:.7rem;font-weight:600;padding:.28rem .55rem;border-radius:20px;backdrop-filter:blur(4px)}
+  .cap{padding:14px 16px 16px}
+  .cap .n{display:flex;align-items:center;gap:8px;font-family:var(--disp);font-size:.72rem;font-weight:600;
+    letter-spacing:.07em;text-transform:uppercase;color:var(--pop-ink)}
+  .cap .n i{font-style:normal;color:var(--faint)}
+  .cap h3{font-family:var(--disp);font-weight:600;font-size:1.1rem;margin:6px 0 7px;letter-spacing:-.01em}
+  .cap .g{font-size:.93rem;color:var(--ink);font-weight:500;margin-bottom:.6rem}
+  .cap .cp{font-size:.86rem;color:var(--muted);line-height:1.5}
+  .cap .cp b{color:var(--pop-ink);font-weight:600}
+  .chip{display:inline-block;margin-top:11px;font-family:var(--disp);font-size:.7rem;font-weight:600;
+    color:var(--pop-ink);background:var(--pop-tint);border:1px solid color-mix(in srgb,var(--pop) 28%,transparent);
+    padding:4px 10px;border-radius:20px}
+  .link{display:block;margin-top:11px;font-size:.78rem;color:var(--faint);text-decoration:none}
+  .link:hover{color:var(--pop-ink)}
 
-  .deck{display:flex;flex-direction:column;gap:1.5rem}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;
-    box-shadow:var(--shadow);display:grid;grid-template-columns:minmax(0,42%) 1fr;
-    transition:transform .3s ease, box-shadow .3s ease}
-  .card:hover{transform:translateY(-4px);box-shadow:0 4px 8px rgba(34,27,20,.06),0 34px 70px rgba(34,27,20,.16)}
-  @media(max-width:720px){.card{grid-template-columns:1fr}}
-
-  .pic{position:relative;background:var(--imgbg);min-height:420px}
-  @media(max-width:720px){.pic{min-height:0;aspect-ratio:1/1}}
-  .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-  .pic .ribbon{position:absolute;top:1rem;left:1rem;z-index:2;display:inline-flex;align-items:center;gap:.4rem;
-    background:rgba(20,16,12,.72);color:#fff;font-size:.74rem;font-weight:600;
-    padding:.35rem .7rem;border-radius:999px;backdrop-filter:blur(4px)}
-
-  .body{padding:2.1rem 2.3rem;display:flex;flex-direction:column;justify-content:center;gap:.1rem;min-width:0}
-  @media(max-width:720px){.body{padding:1.5rem 1.4rem}}
-  .tagline{display:flex;align-items:center;gap:.7rem;margin-bottom:.5rem}
-  .tagline .idx{font-family:var(--disp);font-weight:800;font-size:1.5rem;color:var(--accent);line-height:1}
-  .tagline .ang{font-family:var(--disp);font-size:.73rem;font-weight:700;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--faint)}
-  .body h3{font-size:1.5rem;letter-spacing:-.01em;margin-bottom:.9rem}
-  .gancho{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.3rem,2.3vw,1.6rem);
-    line-height:1.3;color:var(--ink);margin:0 0 1.1rem}
-  .copybox{background:var(--accent-tint);border-radius:14px;padding:1rem 1.15rem;font-size:.95rem;color:var(--ink)}
-  .copybox .tg{display:inline-block;font-family:var(--disp);font-size:.65rem;font-weight:800;letter-spacing:.11em;
-    text-transform:uppercase;color:#fff;background:var(--accent);padding:.2rem .5rem;border-radius:5px;margin-right:.55rem;vertical-align:.09em}
-  .copybox b{color:var(--accent-ink);font-weight:600}
-  .link{display:inline-flex;align-items:center;gap:.3rem;margin-top:1rem;font-size:.84rem;font-weight:500;
-    color:var(--muted);text-decoration:none;width:fit-content}
-  .link:hover{color:var(--accent-ink)}
-  .link::after{content:"→";transition:transform .2s ease}
-  .link:hover::after{transform:translateX(3px)}
-
-  footer{border-top:1px solid var(--line);padding-block:2.4rem;color:var(--muted);font-size:.9rem}
-  .colophon{font-family:var(--disp);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.7rem}
+  footer{border-top:1px solid var(--line);margin-top:1.4rem;padding-block:2.2rem;color:var(--muted);font-size:.9rem}
   footer b{color:var(--ink)}
-  @media(prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+  .colo{font-family:var(--disp);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.7rem}
 </style>
 
-<header class="hero wrap">
-  <p class="eyebrow">PomerMarkt · Confraternização de empresas</p>
-  <h1>O que já está funcionando lá fora</h1>
-  <p class="lede">Anúncios reais de espaços, buffets e hotéis do Brasil vendendo confraternização de fim de ano agora — com o gancho de cada e o que dá pra copiar.</p>
-  <div class="meta"><span><b>09</b> referências</span><span><b>03</b> padrões</span><span>Fonte: Biblioteca de Anúncios · nov/2026</span></div>
-</header>
+<div class="wrap">
+  <header>
+    <h1>O que já funciona <em>lá fora</em></h1>
+    <div class="r"><b>09</b>referências reais<br>confraternização de empresa</div>
+  </header>
 
-<section class="pad wrap">
-  <p class="kick">Antes de olhar as peças</p>
-  <h2>Três padrões se repetem em quase todas</h2>
-  <div class="pats">
-    <div class="pat"><span class="n">01</span><h3>Falam com o organizador</h3><p>"Já escolheu onde?", "Ficou responsável pela festa da firma?". A peça conversa com quem tem a dor de resolver.</p></div>
-    <div class="pat"><span class="n">02</span><h3>Urgência de data real</h3><p>"Dezembro chega rápido e as melhores datas somem", "agenda aberta", "não deixe pra última hora".</p></div>
-    <div class="pat"><span class="n">03</span><h3>Mostram o que inclui</h3><p>Espaço, gastronomia, estrutura — listados na arte — e um CTA direto: "reserve a data", "peça seu orçamento".</p></div>
+  <div class="padroes">
+    <div class="pz"><div class="n">PADRÃO 01</div><h3>Falam com o organizador</h3><p>"Já escolheu onde?", "Ficou responsável pela festa?". Conversam com quem tem a dor de resolver.</p></div>
+    <div class="pz"><div class="n">PADRÃO 02</div><h3>Urgência de data real</h3><p>"Dezembro chega rápido e as melhores datas somem", "não deixe pra última hora".</p></div>
+    <div class="pz"><div class="n">PADRÃO 03</div><h3>Mostram o que inclui</h3><p>Espaço, gastronomia, estrutura na arte — e um CTA direto: "reserve a data".</p></div>
   </div>
-</section>
 
-<section class="cat wrap">
-  <p class="kick">O acervo</p>
-  <h2>Nove anúncios para copiar o jeito</h2>
-  <p class="sub">Cada cartão é uma peça real. A etiqueta de dias no ar é o melhor sinal: quanto mais tempo rodando, mais provável que esteja dando resultado.</p>
+  <p class="lead">Anúncios reais rodando <b>agora</b> no Brasil. A etiqueta de <b>dias no ar</b> é o melhor sinal: quanto mais tempo rodando, mais provável que esteja dando resultado. Peguem o jeito e adaptem com a cara do PomerMarkt.</p>
 
-  <div class="deck">
+  <div class="grid">
 
-    <article class="card">
-      <div class="pic"><span class="ribbon">🏆 93 dias no ar</span><img src="ref_img/boulevard.jpg" alt="Anúncio Boulevard Hall" loading="lazy"></div>
-      <div class="body">
-        <div class="tagline"><span class="idx">01</span><span class="ang">Pacotes + status</span></div>
-        <h3>Boulevard Hall</h3>
-        <p class="gancho">"Sua confraternização merece um espaço à altura da sua empresa."</p>
-        <div class="copybox"><span class="tg">Copiar</span>oferecer <b>pacotes em tamanhos (P, M, G)</b> responde na hora o "serve pro meu time?". O verbo é sempre "reservar a data". É o anúncio mais antigo no ar — a fórmula funciona.</div>
-        <a class="link" href="https://www.facebook.com/ads/library/?id=1706308097088854" target="_blank" rel="noopener">ver na Biblioteca de Anúncios</a>
+    <div class="tile">
+      <div class="im"><span class="days">🏆 93 dias no ar</span><img src="ref_img/boulevard.jpg" alt="Anúncio Boulevard Hall" loading="lazy"></div>
+      <div class="cap">
+        <div class="n">01 · Pacotes <i>Boulevard Hall</i></div>
+        <p class="g">"Merece um espaço à altura da sua empresa."</p>
+        <p class="cp"><b>Copiar:</b> oferecer pacotes em tamanhos (P, M, G) responde na hora o "serve pro meu time?".</p>
+        <span class="chip">o mais antigo no ar</span>
+        <a class="link" href="https://www.facebook.com/ads/library/?id=1706308097088854" target="_blank" rel="noopener">ver na Biblioteca de Anúncios →</a>
       </div>
-    </article>
+    </div>
 
-    <article class="card">
-      <div class="pic"><span class="ribbon">69 dias no ar</span><img src="ref_img/playball.jpg" alt="Anúncio Playball" loading="lazy"></div>
-      <div class="body">
-        <div class="tagline"><span class="idx">02</span><span class="ang">Fuja do mesmo de sempre</span></div>
-        <h3>Playball</h3>
-        <p class="gancho">"A confraternização da sua empresa não precisa ser mais do mesmo."</p>
-        <div class="copybox"><span class="tg">Copiar</span>a arte põe o botão <b>"RESERVE SUA DATA" dentro da imagem</b>, não só no texto. E o ângulo "cansou do restaurante de sempre?" cai perfeito num lugar novo como o PomerMarkt.</div>
-        <a class="link" href="https://www.facebook.com/ads/library/?id=1873731626923104" target="_blank" rel="noopener">ver na Biblioteca de Anúncios</a>
+    <div class="tile">
+      <div class="im"><span class="days">28 dias no ar</span><img src="ref_img/bosque.jpg" alt="Anúncio Bosque Encantado" loading="lazy"></div>
+      <div class="cap">
+        <div class="n">04 · Urgência <i>Bosque Encantado</i></div>
+        <p class="g">"E você, já garantiu a sua?"</p>
+        <p class="cp"><b>Copiar:</b> o aviso "época mais disputada, não deixe pra última hora" + foto de gente brindando. O mais parecido com o PomerMarkt.</p>
+        <a class="link" href="https://www.facebook.com/ads/library/?id=2190658048323855" target="_blank" rel="noopener">ver na Biblioteca de Anúncios →</a>
       </div>
-    </article>
+    </div>
 
-    <article class="card">
-      <div class="pic"><span class="ribbon">🎬 59 dias no ar</span><img src="ref_img/tambiu.jpg" alt="Anúncio Espaço Tambiú" loading="lazy"></div>
-      <div class="body">
-        <div class="tagline"><span class="idx">03</span><span class="ang">Pergunta-gancho · vídeo</span></div>
-        <h3>Espaço Tambiú</h3>
-        <p class="gancho">"Já escolheu onde será a sua confraternização de fim de ano?"</p>
-        <div class="copybox"><span class="tg">Copiar</span>abrir com <b>a pergunta certeira</b> e emendar o trio <b>espaço + gastronomia + estrutura</b>. Vídeo curto passeando pelo lugar — o PomerMarkt faz até em obra.</div>
-        <a class="link" href="https://www.facebook.com/ads/library/?id=2019897972050838" target="_blank" rel="noopener">ver na Biblioteca de Anúncios</a>
+    <div class="tile">
+      <div class="im"><span class="days">🎬 59 dias no ar</span><img src="ref_img/tambiu.jpg" alt="Anúncio Espaço Tambiú" loading="lazy"></div>
+      <div class="cap">
+        <div class="n">03 · Pergunta <i>Espaço Tambiú</i></div>
+        <p class="g">"Já escolheu onde será a sua confraternização?"</p>
+        <p class="cp"><b>Copiar:</b> abrir com a pergunta certeira e emendar o trio espaço + gastronomia + estrutura. Vídeo passeando pelo lugar.</p>
+        <a class="link" href="https://www.facebook.com/ads/library/?id=2019897972050838" target="_blank" rel="noopener">ver na Biblioteca de Anúncios →</a>
       </div>
-    </article>
+    </div>
 
-    <article class="card">
-      <div class="pic"><span class="ribbon">28 dias no ar</span><img src="ref_img/bosque.jpg" alt="Anúncio Bosque Encantado" loading="lazy"></div>
-      <div class="body">
-        <div class="tagline"><span class="idx">04</span><span class="ang">Urgência + festa</span></div>
-        <h3>Bosque Encantado</h3>
-        <p class="gancho">"As confraternizações já estão chegando. E você, já garantiu a sua?"</p>
-        <div class="copybox"><span class="tg">Copiar</span>o aviso explícito <b>"época mais disputada, não deixe pra última hora"</b> + foto de <b>gente brindando</b>. É o mais parecido com o PomerMarkt: espaço festivo ao ar livre.</div>
-        <a class="link" href="https://www.facebook.com/ads/library/?id=2190658048323855" target="_blank" rel="noopener">ver na Biblioteca de Anúncios</a>
+    <div class="tile">
+      <div class="im"><span class="days">69 dias no ar</span><img src="ref_img/playball.jpg" alt="Anúncio Playball" loading="lazy"></div>
+      <div class="cap">
+        <div class="n">02 · Antimesmice <i>Playball</i></div>
+        <p class="g">"Não precisa ser mais do mesmo."</p>
+        <p class="cp"><b>Copiar:</b> o botão "RESERVE SUA DATA" dentro da arte, não só no texto. O ângulo cai bem num lugar novo.</p>
+        <a class="link" href="https://www.facebook.com/ads/library/?id=1873731626923104" target="_blank" rel="noopener">ver na Biblioteca de Anúncios →</a>
       </div>
-    </article>
+    </div>
 
-    <article class="card">
-      <div class="pic"><span class="ribbon">26 dias no ar</span><img src="ref_img/riale.jpg" alt="Anúncio Riale Hotéis" loading="lazy"></div>
-      <div class="body">
-        <div class="tagline"><span class="idx">05</span><span class="ang">Dor do organizador</span></div>
-        <h3>Riale Hotéis</h3>
-        <p class="gancho">"Ficou responsável por organizar a confraternização da empresa?"</p>
-        <div class="copybox"><span class="tg">Copiar</span>falar <b>direto com quem foi incumbido</b> (alívio, não festa) e mostrar o <b>diferencial único do lugar</b>. O do PomerMarkt: ser o espaço mais novo de Pomerode.</div>
-        <a class="link" href="https://www.facebook.com/ads/library/?id=1901353394607490" target="_blank" rel="noopener">ver na Biblioteca de Anúncios</a>
+    <div class="tile">
+      <div class="im"><span class="days">19 dias no ar</span><img src="ref_img/paparazzi.jpg" alt="Anúncio Paparazzi Gold Bar" loading="lazy"></div>
+      <div class="cap">
+        <div class="n">06 · Pacote <i>Paparazzi Gold Bar</i></div>
+        <p class="g">"Monte sua festa do seu jeito."</p>
+        <p class="cp"><b>Copiar:</b> lista de ícones do que está incluso (espaço, buffet, música, drinks) + "agenda aberta".</p>
+        <a class="link" href="https://www.facebook.com/ads/library/?id=1116316444714988" target="_blank" rel="noopener">ver na Biblioteca de Anúncios →</a>
       </div>
-    </article>
+    </div>
 
-    <article class="card">
-      <div class="pic"><span class="ribbon">19 dias no ar</span><img src="ref_img/paparazzi.jpg" alt="Anúncio Paparazzi Gold Bar" loading="lazy"></div>
-      <div class="body">
-        <div class="tagline"><span class="idx">06</span><span class="ang">Lista do que inclui</span></div>
-        <h3>Paparazzi Gold Bar</h3>
-        <p class="gancho">"Agenda de fim de ano aberta. Monte sua festa do seu jeito."</p>
-        <div class="copybox"><span class="tg">Copiar</span>a arte com <b>lista de ícones do que está incluso</b> (espaço, buffet, música, drinks) deixa o pacote claro num olhar. Fecha com <b>"agenda aberta" + Enviar mensagem</b>.</div>
-        <a class="link" href="https://www.facebook.com/ads/library/?id=1116316444714988" target="_blank" rel="noopener">ver na Biblioteca de Anúncios</a>
+    <div class="tile">
+      <div class="im"><span class="days">26 dias no ar</span><img src="ref_img/riale.jpg" alt="Anúncio Riale Hotéis" loading="lazy"></div>
+      <div class="cap">
+        <div class="n">05 · Organizador <i>Riale Hotéis</i></div>
+        <p class="g">"Ficou responsável pela festa da firma?"</p>
+        <p class="cp"><b>Copiar:</b> falar direto com quem foi incumbido (alívio) e mostrar o diferencial único do lugar.</p>
+        <a class="link" href="https://www.facebook.com/ads/library/?id=1901353394607490" target="_blank" rel="noopener">ver na Biblioteca de Anúncios →</a>
       </div>
-    </article>
+    </div>
 
-    <article class="card">
-      <div class="pic"><span class="ribbon">53 dias no ar</span><img src="ref_img/suhai.jpg" alt="Anúncio Suhai Music Hall" loading="lazy"></div>
-      <div class="body">
-        <div class="tagline"><span class="idx">07</span><span class="ang">Espaço versátil</span></div>
-        <h3>Suhai Music Hall</h3>
-        <p class="gancho">"Um grande evento começa pela escolha do espaço certo."</p>
-        <div class="copybox"><span class="tg">Copiar</span>posicionar o lugar como <b>adaptável a qualquer formato</b> ("seu evento, seu formato") — útil quando o espaço serve tanto para 20 quanto para 150 pessoas.</div>
-        <a class="link" href="https://www.facebook.com/ads/library/?id=1423074046619066" target="_blank" rel="noopener">ver na Biblioteca de Anúncios</a>
+    <div class="tile">
+      <div class="im"><span class="days">🎬 39 dias no ar</span><img src="ref_img/assimeassado.jpg" alt="Anúncio Assim e Assado" loading="lazy"></div>
+      <div class="cap">
+        <div class="n">09 · Checklist <i>Beto Assim &amp; Assado</i></div>
+        <p class="g">"Dezembro chega rápido e as melhores datas somem."</p>
+        <p class="cp"><b>Copiar:</b> checklist de 3 bullets (cabe a equipe toda / comida boa / atendimento que cuida de tudo) + "chama no WhatsApp".</p>
+        <a class="link" href="https://www.facebook.com/ads/library/?id=1109688648123940" target="_blank" rel="noopener">ver na Biblioteca de Anúncios →</a>
       </div>
-    </article>
+    </div>
 
-    <article class="card">
-      <div class="pic"><span class="ribbon">12 dias no ar</span><img src="ref_img/corporativo.jpg" alt="Anúncio Center Convention" loading="lazy"></div>
-      <div class="body">
-        <div class="tagline"><span class="idx">08</span><span class="ang">Capacidade</span></div>
-        <h3>Center Convention</h3>
-        <p class="gancho">"Reunir de 200 a 300 pessoas exige um espaço à altura."</p>
-        <div class="copybox"><span class="tg">Copiar</span>quando o espaço é grande, puxar <b>pelo número de pessoas</b> e por "consulte disponibilidade pra nov, dez ou jan". Mostra que entende a dor de quem tem equipe grande.</div>
-        <a class="link" href="https://www.facebook.com/ads/library/?id=2234409337119881" target="_blank" rel="noopener">ver na Biblioteca de Anúncios</a>
+    <div class="tile">
+      <div class="im"><span class="days">53 dias no ar</span><img src="ref_img/suhai.jpg" alt="Anúncio Suhai Music Hall" loading="lazy"></div>
+      <div class="cap">
+        <div class="n">07 · Versátil <i>Suhai Music Hall</i></div>
+        <p class="g">"Começa pela escolha do espaço certo."</p>
+        <p class="cp"><b>Copiar:</b> posicionar o lugar como adaptável a qualquer formato — serve tanto para 20 quanto para 150 pessoas.</p>
+        <a class="link" href="https://www.facebook.com/ads/library/?id=1423074046619066" target="_blank" rel="noopener">ver na Biblioteca de Anúncios →</a>
       </div>
-    </article>
+    </div>
 
-    <article class="card">
-      <div class="pic"><span class="ribbon">🎬 39 dias no ar</span><img src="ref_img/assimeassado.jpg" alt="Anúncio Assim e Assado" loading="lazy"></div>
-      <div class="body">
-        <div class="tagline"><span class="idx">09</span><span class="ang">Urgência + checklist · vídeo</span></div>
-        <h3>Beto Assim &amp; Assado</h3>
-        <p class="gancho">"Dezembro chega rápido e as melhores datas somem primeiro."</p>
-        <div class="copybox"><span class="tg">Copiar</span>o <b>checklist de 3 bullets</b> (✔ cabe a equipe toda ✔ comida boa ✔ atendimento que cuida de tudo) + urgência + <b>"chama no WhatsApp"</b>. Simples e direto — modelo ideal pra primeira peça.</div>
-        <a class="link" href="https://www.facebook.com/ads/library/?id=1109688648123940" target="_blank" rel="noopener">ver na Biblioteca de Anúncios</a>
+    <div class="tile">
+      <div class="im"><span class="days">12 dias no ar</span><img src="ref_img/corporativo.jpg" alt="Anúncio Center Convention" loading="lazy"></div>
+      <div class="cap">
+        <div class="n">08 · Capacidade <i>Center Convention</i></div>
+        <p class="g">"Reunir de 200 a 300 pessoas."</p>
+        <p class="cp"><b>Copiar:</b> puxar pelo número de pessoas e por "consulte disponibilidade pra nov, dez ou jan".</p>
+        <a class="link" href="https://www.facebook.com/ads/library/?id=2234409337119881" target="_blank" rel="noopener">ver na Biblioteca de Anúncios →</a>
       </div>
-    </article>
+    </div>
 
   </div>
-</section>
 
-<footer class="wrap">
-  <p class="colophon">Como usar</p>
-  <p>Isto é inspiração, não cópia. Peguem o jeito — o gancho, a urgência, a lista do que inclui, o CTA — e adaptem com a cara do PomerMarkt. Todos os anúncios são públicos, da <b>Biblioteca de Anúncios do Facebook</b> (23/11/2026); os dias no ar indicam o que está dando certo para quem anuncia.</p>
-</footer>
+  <footer>
+    <p class="colo">Como usar</p>
+    <p>Isto é inspiração, não cópia. Peguem o jeito — o gancho, a urgência, a lista do que inclui, o CTA — e adaptem com a cara do PomerMarkt. Anúncios públicos, da <b>Biblioteca de Anúncios do Facebook</b> (23/11/2026); os dias no ar indicam o que está dando certo para quem anuncia.</p>
+  </footer>
+</div>
