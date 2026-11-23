@@ -1,0 +1,224 @@
+<title>Fechamento de Ano no PomerMarkt</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap">
+<style>
+  /* Layout: brief editorial — faixa verde de abertura, corpo em coluna de leitura, exemplos em mockups de post */
+  :root{
+    --bg:#FBF7F0; --surface:#ffffff; --ink:#241f1a; --muted:#6f655b;
+    --pine:#1f4d3a; --pine-soft:#2c6a4f; --honey:#d98324; --honey-ink:#9a5a12;
+    --line:#ece3da; --shadow:0 1px 2px rgba(36,31,26,.06),0 8px 24px rgba(36,31,26,.07);
+    --disp:"Bricolage Grotesque",system-ui,sans-serif;
+    --body:"Inter",system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#17130f; --surface:#211a14; --ink:#f3ece2; --muted:#a99e92;
+    --pine:#5fae8a; --pine-soft:#4b9476; --honey:#f0a24a; --honey-ink:#f0a24a;
+    --line:#342b23; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }}
+  :root[data-theme="dark"]{
+    --bg:#17130f; --surface:#211a14; --ink:#f3ece2; --muted:#a99e92;
+    --pine:#5fae8a; --pine-soft:#4b9476; --honey:#f0a24a; --honey-ink:#f0a24a;
+    --line:#342b23; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;
+    font-size:16px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;
+    padding-left:max(20px,env(safe-area-inset-left,0px));
+    padding-right:max(20px,env(safe-area-inset-right,0px))}
+  h1,h2,h3{font-family:var(--disp);font-weight:700;line-height:1.1;text-wrap:balance;margin:0}
+  p{margin:0}
+  .eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--honey-ink)}
+
+  /* HERO */
+  .hero{background:var(--pine);color:#f6f1e7;
+    margin-top:calc(-1 * env(safe-area-inset-top,0px));
+    padding-top:calc(env(safe-area-inset-top,0px) + 3.2rem);padding-bottom:3rem}
+  .hero .eyebrow{color:#e9c48a}
+  .hero-in{max-width:760px;margin:0 auto;
+    padding-left:max(20px,env(safe-area-inset-left,0px));
+    padding-right:max(20px,env(safe-area-inset-right,0px));
+    display:flex;flex-direction:column;gap:1rem}
+  .hero h1{font-size:clamp(2rem,6vw,3.1rem);font-weight:800;color:#fff;letter-spacing:-.01em}
+  .hero .lede{font-size:clamp(1.05rem,2.5vw,1.2rem);color:#e5ddcf;max-width:44ch}
+  .kicker{display:inline-flex;align-items:center;gap:.5rem;align-self:flex-start;
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+    padding:.35rem .7rem;border-radius:999px;font-size:.8rem;color:#f0e8d8}
+
+  section{padding-block:2.6rem;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:0}
+  .lbl{font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+  h2{font-size:clamp(1.4rem,3.6vw,1.9rem);margin-bottom:.6rem}
+  .sub{color:var(--muted);max-width:60ch}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.4rem}
+  @media(max-width:560px){.grid2{grid-template-columns:1fr}}
+  .fact{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem;box-shadow:var(--shadow)}
+  .fact h3{font-size:1rem;margin-bottom:.3rem}
+  .fact p{color:var(--muted);font-size:.93rem}
+
+  /* EXEMPLOS DE CRIATIVO */
+  .ex{display:grid;grid-template-columns:200px 1fr;gap:1.4rem;align-items:start;
+    background:var(--surface);border:1px solid var(--line);border-radius:18px;
+    padding:1.3rem;box-shadow:var(--shadow);margin-top:1.3rem}
+  @media(max-width:560px){.ex{grid-template-columns:1fr}}
+  .mock{aspect-ratio:9/16;border-radius:14px;overflow:hidden;position:relative;
+    display:flex;flex-direction:column;justify-content:flex-end;padding:.9rem;
+    color:#fff;max-width:100%;min-width:0}
+  .mock.m1{background:linear-gradient(170deg,#2c6a4f,#143a2b 78%)}
+  .mock.m2{background:linear-gradient(170deg,#c9741f,#7a3d10 80%)}
+  .mock.m3{background:linear-gradient(170deg,#3a6b86,#1d3f52 80%)}
+  .mock .tagtop{position:absolute;top:.7rem;left:.7rem;font-size:.6rem;letter-spacing:.08em;
+    text-transform:uppercase;background:rgba(0,0,0,.28);padding:.25rem .5rem;border-radius:6px}
+  .mock .ph{position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);
+    text-align:center;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(255,255,255,.72)}
+  .mock .mh{font-family:var(--disp);font-weight:800;font-size:1.02rem;line-height:1.12;
+    text-shadow:0 1px 10px rgba(0,0,0,.35);position:relative;z-index:1}
+  .mock .cta{margin-top:.55rem;align-self:flex-start;background:#fff;color:#16130f;
+    font-size:.68rem;font-weight:600;padding:.34rem .6rem;border-radius:7px;position:relative;z-index:1}
+  .ex-body{min-width:0}
+  .ex-body .ang{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--honey-ink)}
+  .ex-body h3{font-size:1.15rem;margin:.15rem 0 .7rem}
+  .copy{background:var(--bg);border:1px dashed var(--line);border-radius:10px;
+    padding:.85rem .95rem;font-size:.95rem;white-space:pre-line}
+  .dir{margin-top:.75rem;font-size:.9rem;color:var(--muted)}
+  .dir b{color:var(--ink);font-weight:600}
+  .fill{color:var(--honey-ink);font-weight:600}
+
+  ul.asks{list-style:none;padding:0;margin:1.2rem 0 0;display:flex;flex-direction:column;gap:.7rem}
+  ul.asks li{display:flex;gap:.7rem;align-items:flex-start;background:var(--surface);
+    border:1px solid var(--line);border-radius:12px;padding:.85rem 1rem;box-shadow:var(--shadow)}
+  ul.asks .n{flex:0 0 auto;width:1.5rem;height:1.5rem;border-radius:7px;background:var(--pine);
+    color:#fff;font-family:var(--disp);font-weight:700;font-size:.85rem;display:flex;
+    align-items:center;justify-content:center;margin-top:.1rem}
+  ul.asks li p{font-size:.95rem}
+  ul.asks li p span{color:var(--muted);display:block;font-size:.85rem}
+
+  .spec{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+  .chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;
+    padding:.4rem .8rem;font-size:.85rem;color:var(--ink)}
+  .chip b{color:var(--pine);font-family:var(--disp)}
+
+  footer{padding-block:2.2rem;text-align:center;color:var(--muted);font-size:.85rem}
+  .note{font-size:.8rem;color:var(--muted);margin-top:1rem;font-style:italic}
+</style>
+
+<header class="hero">
+  <div class="hero-in">
+    <span class="kicker">🎄 Proposta de campanha · Dezembro</span>
+    <span class="eyebrow">PomerMarkt · Pomerode</span>
+    <h1>O fim de ano da empresa deles começa aqui</h1>
+    <p class="lede">Uma campanha para encher a agenda de dezembro com confraternizações de empresas — reservando a data antes mesmo de a cidade perceber que esse espaço existe.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <p class="lbl">A ideia</p>
+    <h2>Vender a agenda antes de abrir a porta</h2>
+    <p class="sub">O PomerMarkt ainda está em obras — e isso joga a nosso favor. Em vez de esperar a inauguração, a campanha trabalha a <b>pré-reserva de dezembro</b>: a empresa garante a data da confraternização agora, com condição de quem chega primeiro. Dá exclusividade, cria urgência e já enche o calendário de estreia.</p>
+    <div class="grid2">
+      <div class="fact"><h3>Pra quem falamos</h3><p>Donos, RH e gestores de empresas de Pomerode e região (Blumenau, Timbó, Indaial, Jaraguá). 28 a 55 anos.</p></div>
+      <div class="fact"><h3>A dor que resolvemos</h3><p>Todo ano cai no mesmo restaurante. O organizador quer um lugar diferente, sem dor de cabeça, que a equipe comente depois.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="lbl">Exemplos de criativo</p>
+    <h2>Três ângulos para testar</h2>
+    <p class="sub">Cada um ataca a decisão por um lado diferente. Os campos em <span class="fill">destaque</span> são o que precisamos de vocês para fechar (abaixo tem a lista).</p>
+
+    <!-- EX 1 -->
+    <div class="ex">
+      <div class="mock m1">
+        <span class="tagtop">Reels · 9:16</span>
+        <span class="ph">vídeo do espaço</span>
+        <p class="mh">Esse ano a confra vai ser diferente.</p>
+        <span class="cta">Reservar no WhatsApp</span>
+      </div>
+      <div class="ex-body">
+        <p class="ang">Ângulo A — Novidade</p>
+        <h3>O lugar que ninguém ainda conhece</h3>
+        <div class="copy">A confraternização da sua empresa esse ano vai ser diferente. 🎉
+
+O PomerMarkt está abrindo as portas em Pomerode e as reservas de fim de ano já estão abertas. Espaço para <span class="fill">[nº de pessoas]</span>, com <span class="fill">[o que inclui]</span>. A gente cuida de tudo — você só leva a equipe.
+
+👉 Chame no WhatsApp e garanta a data.</div>
+        <p class="dir"><b>Direção visual:</b> passeio pelo espaço (mesmo em obra, com projeção do "como vai ficar"), fechando em uma mesa posta/ambiente aconchegante. Selo "Reservas de dezembro abertas".</p>
+      </div>
+    </div>
+
+    <!-- EX 2 -->
+    <div class="ex">
+      <div class="mock m2">
+        <span class="tagtop">Stories · 9:16</span>
+        <span class="ph">imagem do ambiente</span>
+        <p class="mh">Dezembro lota rápido.</p>
+        <span class="cta">Garantir a data</span>
+      </div>
+      <div class="ex-body">
+        <p class="ang">Ângulo B — Urgência</p>
+        <h3>Quem marca primeiro, escolhe a data</h3>
+        <div class="copy">📅 Dezembro lota rápido.
+
+Garanta agora a confraternização da sua empresa no espaço mais novo de Pomerode. Vagas limitadas por data — quem reserva primeiro escolhe o melhor dia.
+
+👉 Fale com a gente e reserve antes que feche.</div>
+        <p class="dir"><b>Direção visual:</b> calendário de dezembro com datas "riscando" uma a uma, ou contador de vagas. Tom de escassez real, sem apelação.</p>
+      </div>
+    </div>
+
+    <!-- EX 3 -->
+    <div class="ex">
+      <div class="mock m3">
+        <span class="tagtop">Feed · 1:1 / 4:5</span>
+        <span class="ph">grupo confraternizando</span>
+        <p class="mh">Tira a equipe da mesmice.</p>
+        <span class="cta">Pedir orçamento</span>
+      </div>
+      <div class="ex-body">
+        <p class="ang">Ângulo C — Experiência</p>
+        <h3>A confra que a equipe comenta depois</h3>
+        <div class="copy">🍻 Tira a equipe da mesmice do restaurante de sempre.
+
+No PomerMarkt a sua empresa fecha o ano num lugar com a cara de Pomerode — <span class="fill">[diferencial do espaço]</span>. Pacotes para <span class="fill">[de X a Y pessoas]</span>.
+
+👉 Peça seu orçamento no WhatsApp.</div>
+        <p class="dir"><b>Direção visual:</b> pessoas rindo/brindando, clima de festa de equipe, detalhe do que torna o lugar único (vista, estrutura, gastronomia). Prova de experiência.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="lbl">Formatos e destino</p>
+    <h2>Onde cada peça roda</h2>
+    <p class="sub">Mesmo criativo adaptado por posicionamento. Toda peça leva para a conversa no WhatsApp — é lá que a reserva fecha.</p>
+    <div class="spec">
+      <span class="chip"><b>9:16</b> &nbsp;Reels e Stories</span>
+      <span class="chip"><b>1:1 / 4:5</b> &nbsp;Feed</span>
+      <span class="chip"><b>CTA</b> &nbsp;Enviar mensagem → WhatsApp</span>
+      <span class="chip"><b>Objetivo</b> &nbsp;Conversas / mensagens</span>
+    </div>
+  </section>
+
+  <section>
+    <p class="lbl">O que precisamos de vocês</p>
+    <h2>Para fechar a copy e subir</h2>
+    <p class="sub">Com essas cinco respostas a gente finaliza os textos e coloca a campanha no ar.</p>
+    <ul class="asks">
+      <li><span class="n">1</span><p>Capacidade do espaço<span>Para quantas pessoas, no mínimo e no máximo?</span></p></li>
+      <li><span class="n">2</span><p>O que o pacote inclui<span>Só o espaço? Com comida, bebida, atrações, som?</span></p></li>
+      <li><span class="n">3</span><p>Preço ou faixa de preço<span>Valor fechado, por pessoa, ou pacotes?</span></p></li>
+      <li><span class="n">4</span><p>Quando já recebe<span>Já tem data em dezembro ou é pré-reserva para a inauguração?</span></p></li>
+      <li><span class="n">5</span><p>Número do WhatsApp<span>Para onde mandamos as conversas da campanha.</span></p></li>
+    </ul>
+    <p class="note">Os tons de cor e a tipografia deste documento são de apresentação — o criativo final segue a identidade oficial do PomerMarkt.</p>
+  </section>
+
+  <footer>Proposta de campanha · PomerMarkt · Pomerode/SC</footer>
+</div>
